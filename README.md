@@ -1,4 +1,8 @@
-# etch-a-sketch
-The Odin Project 4
+# Etch a Sketch
+My version of the childhood classic, etch-a-sketch, for The Odin Project
+## Live Preview
+https://celinarabe.github.io/etch-a-sketch/
 
-This project was done to practice DOM manipulation.
+## Notes
+This project was created to practice DOM manipulation using Javascript and CSS.
+# Enjoy!
