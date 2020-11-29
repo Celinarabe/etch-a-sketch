@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>hi</title>
+
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+<div class = "title">
+    <h1>Etch-a-Sketch</h1>
+    <button id="clearBtn">Clear</button>
+
+</div>
+  
+<div class="grid-container" id="grid-container">
+
+</div>
+
+
+
+
+
+<script>
+  let container = document.getElementById("grid-container");
+
+
+  function makeGrid(dimension){
+    //create grid
+    container.style.setProperty("--grid-rows",dimension)
+    container.style.setProperty("--grid-cols",dimension)
+    for (c=0; c < (dimension**2); c++){
+      let cell = document.createElement("div");
+      cell.classList.add("grid-item");
+      cell.innerText = "";
+      container.appendChild(cell);
+    };
+    //add hover event listener
+    let gridItems = document.querySelectorAll('.grid-item');
+    gridItems.forEach(item => item.addEventListener('mouseover', changeBackground));
+  };
+
+  function changeBackground(e){
+    console.log(e);
+    this.classList.add('hovered');
+  }
+
+  function promptUser() {
+    let dimension = window.prompt("Enter size of grid", "1");
+    //clear existing grid
+    document.getElementById("grid-container").innerHTML="";
+    makeGrid(dimension);
+  }
+  
+  //starting
+  makeGrid(16,16);
+  //event listener to button
+  document.getElementById("clearBtn").addEventListener("click", promptUser);
+
+
+
+</script>
+
+</body>
+</html>
